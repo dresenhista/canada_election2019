@@ -160,9 +160,8 @@ That will be used to calculate the Bayes probability in the function below:
 
 -- In the training set we calculate 
 <center>
-    \begin{align}
-    \\ P(X \cap Y) = P(X| Y=y) P(Y)
-    \end{align}
+    [equation]P(X \cap Y) = P(X| Y=y) P(Y)
+    
 </center>
 
 Which can be translated into:
