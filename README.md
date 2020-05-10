@@ -50,6 +50,8 @@ warnings.filterwarnings('ignore')
 
 ## Data Preparation
 
+The data used in this file comes from the script run in [this repo](http://localhost:8888/notebooks/election2019/scrapper/canadian_party_pr_scraper.ipynb).
+
 First let's load the dataset and see how it looks like:
 
 
@@ -247,8 +249,53 @@ skplt.metrics.plot_confusion_matrix(y_test, y_pred);
 
 
 # Ta-dã moment
+Now we upload an article that relates to polytics and see if it has a Liberal, Conservative or NDP tone to it:
+
+This is the article that I choose, but you can use the function below to retrieve it: https://www.thestar.com/news/canada/2020/04/18/canada-among-13-countries-uniting-to-demand-global-co-operation-russia-reports-biggest-increase-in-cases-spain-becomes-third-country-to-report-over-20000-virus-deaths.html
 
 
 ```python
+#for scraping
+import requests
+from bs4 import BeautifulSoup
+#add data as dataframe and make math calculations
+import pandas as pd
 
+
+
+#article you want to test:
+webpage = 'https://www.thestar.com/news/canada/2020/04/18/canada-among-13-countries-uniting-to-demand-global-co-operation-russia-reports-biggest-increase-in-cases-spain-becomes-third-country-to-report-over-20000-virus-deaths.html'
+response = requests.get(webpage)
+soup = BeautifulSoup(response.text, 'lxml')
+class_name='.text-block-container'
+
+#gets all the content
+article = ''
+for text in soup.select(class_name):
+    article  += text.get_text()
+
+article_df =  pd.DataFrame(data= {'article':[article]})
 ```
+
+You need to tokenize the hold out data and call the same vectorized function used in the training **if you don't do this you won't have the same features in the holdout**
+
+
+```python
+#tokenize the words in the content
+
+X_validation = vect.transform(article_df["article"])
+
+ndf = pd.SparseDataFrame(
+    X_validation.toarray(), columns=vect.get_feature_names()
+)
+```
+
+
+```python
+#calls the Naive Bayes trained model:
+y_pred = clfrNB.predict(X_validation)
+print(f'The Article has a tone closer to this party: {y_pred}')
+```
+
+    The Article has a tone closer to this party: ['NDP']
+    
