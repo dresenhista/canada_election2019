@@ -160,7 +160,7 @@ That will be used to calculate the Bayes probability in the function below:
 
 -- In the training set we calculate 
 <center>
-    ![equation]("https://www.codecogs.com/eqnedit.php?latex=P(X\bigcap&space;Y)&space;=&space;P(X|Y=y)P(Y)" target="_blank")
+    ![equation](https://www.codecogs.com/eqnedit.php?latex=P(X\bigcap&space;Y)&space;=&space;P(X|Y=y)P(Y))
     
 </center>
 
