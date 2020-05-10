@@ -166,7 +166,7 @@ That will be used to calculate the Bayes probability in the function below:
 Which can be translated into:
 
 
-![equation](https://latex.codecogs.com/gif.latex?P%28content%20%5Ccap%20political%20party%20Y%29%20%3D%20P%28content%7CParty%3Dy%29P%28Party%29%29%29)
+![equation](https://latex.codecogs.com/gif.latex?P%28content%20%5Ccap%20political%20party%20Y%29%20%3D%20P%28content%7CParty%3Dy%29P%28Party%29)
 
 
 Where:
