@@ -160,7 +160,7 @@ That will be used to calculate the Bayes probability in the function below:
 
 -- In the training set we calculate 
 <center>
-    [equation]P(X \cap Y) = P(X| Y=y) P(Y)
+    ![equation](P(X \cap Y) = P(X| Y=y) P(Y))
     
 </center>
 
@@ -168,7 +168,7 @@ Which can be translated into:
 
 <center>
     \begin{align}
-    \\ P(content \cap political party Y) = P(content| Party=y) P(party)
+    ![equation](P(content \cap political party Y) = P(content| Party=y) P(party))
     \end{align}
 </center>
 
