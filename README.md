@@ -160,27 +160,21 @@ That will be used to calculate the Bayes probability in the function below:
 
 -- In the training set we calculate 
 
-![equation](https://latex.codecogs.com/gif.latex?P%28X%5Cbigcap%20Y%29%20%3D%20P%28X%7CY%3Dy%29P%28Y%29)
+![equation](https://latex.codecogs.com/gif.latex?P%28X%5Ccap%20Y%29%20%3D%20P%28X%7CY%3Dy%29P%28Y%29)
     
 
 Which can be translated into:
 
-<center>
-    \begin{align}
-    ![equation](P(content \cap political party Y) = P(content| Party=y) P(party))
-    \end{align}
-</center>
+
+![equation](https://latex.codecogs.com/gif.latex?P%28content%20%5Ccap%20political%20party%20Y%29%20%3D%20P%28content%7CParty%3Dy%29P%28Party%29%29%29)
+
 
 Where:
 
+![equation](https://latex.codecogs.com/gif.latex?P%28content%7CParty%29%20%3D%20%5Cfrac%7Bnumber%5C%2C%20the%5C%2C%20word%5C%2C%20showed%5C%2C%20by%5C%2C%20party%7D%7Btotal%5C%2C%20words%5C%2C%20by%5C%2C%20party%7D)
 
-\begin{equation*}
-\\P(content | Party) = \frac{number\_the\_word\_shows\_by\_party}{total\_words\_by\_party} 
-\end{equation*}
+![equation](https://latex.codecogs.com/gif.latex?P%28content%7CParty%29%20%3D%20%5Cfrac%7Bpost%5C%2C%20release%5C%2C%20by%5C%2C%20party%7D%7Btotal%5C%2C%20post%5C%2C%20release%5C%2C%20by%5C%2C%20party%7D)
 
-\begin{equation*}
-\\P(Party) = \frac{post\_release\_by\_party}{total\_post\_release} 
-\end{equation*}
 
 
 And last but not least We will also tokenize the words. Tokenize is the process of getting a sentence, or writing passage and breaking into a vector of words. 
