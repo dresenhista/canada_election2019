@@ -159,10 +159,9 @@ The first thing the algorithm will do is in the **training set** count #number o
 That will be used to calculate the Bayes probability in the function below:
 
 -- In the training set we calculate 
-<center>
-    ![equation](https://latex.codecogs.com/gif.latex?P%28X%5Cbigcap%20Y%29%20%3D%20P%28X%7CY%3Dy%29P%28Y%29)
+
+![equation](https://latex.codecogs.com/gif.latex?P%28X%5Cbigcap%20Y%29%20%3D%20P%28X%7CY%3Dy%29P%28Y%29)
     
-</center>
 
 Which can be translated into:
 
